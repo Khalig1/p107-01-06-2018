@@ -1,0 +1,82 @@
+@font-face{
+    font-family: "Fontawesome";
+    src: url("http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.eot?#iefix&v=4.3.0") format("embedded-opentype"),
+    url("http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.woff2?v=4.3.0") format("woff2"),
+    url("http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.woff?v=4.3.0") format("woff"),
+    url("http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.ttf?v=4.3.0") format("truetype"),
+    url("http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular") format("svg");
+}
+body{
+    height: 5000px;
+}
+/* my defaults */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Comfortaa', cursive;
+}
+
+.wrapper{
+    width: 300px;
+    height: 300px;
+    background: #555;
+    position: relative;
+    border: 1px solid transparent;
+    transition: all 0.3s linear;
+}
+.wrapper::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 15px solid tomato;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    opacity: 0;
+    transition: all 0.3s linear;
+}
+.wrapper::before{
+    content: "\f236";
+    font-family: "Fontawesome";
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    opacity: 0;
+    transition: all 0.3s linear;
+    z-index: 1;
+    font-size: 10px;
+    color: white;
+}
+.wrapper:hover{
+    border-color: tomato;
+}
+.wrapper:hover::after,
+.wrapper:hover::before{
+    opacity: 1;
+}
+
+.outer{
+    margin-top: 50px;
+    width: 300px;
+    height: 300px;
+    background: #ddd;
+    text-align: center;
+    line-height: 300px;
+    position: relative;
+}
+.outer::after{
+    content: "";
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 15px solid #ddd;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    transition: all 0.01s linear;
+}
+.outer:hover::after{
+    right: -29px;
+}
